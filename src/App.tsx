@@ -8,6 +8,12 @@ import LoginPage from "./pages/Login";
 import Account from "./pages/Account";
 import SendSms from "./pages/SendSms";
 import CustomSMS from "./pages/CustomSMS";
+import Group from "./pages/Group";
+import Inbox from "./pages/Inbox";
+import SentMessages from "./pages/SentMessages";
+import SentStatistics from "./pages/SentStatistics";
+import Invoice from "./pages/Invoice";
+import BuyNow from "./pages/BuyNow";
 
 const AppLayout = () => (
   <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
@@ -56,6 +62,60 @@ const router = createBrowserRouter([
       {
         path: "/custom-sms",
         element: <CustomSMS />,
+      },
+    ],
+  },
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/groups",
+        element: <Group />,
+      },
+    ],
+  },
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/inbox",
+        element: <Inbox />,
+      },
+    ],
+  },
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/sent-messages",
+        element: <SentMessages />,
+      },
+    ],
+  },
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/sent-statistics",
+        element: <SentStatistics />,
+      },
+    ],
+  },
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/invoices",
+        element: <Invoice />,
+      },
+    ],
+  },
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/pricing",
+        element: <BuyNow />,
       },
     ],
   },

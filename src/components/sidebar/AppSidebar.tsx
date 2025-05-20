@@ -4,16 +4,19 @@ import * as React from "react";
 import {
   BookText,
   CameraIcon,
-  ClipboardListIcon,
-  DatabaseIcon,
+  ChartNoAxesCombined,
+  CreditCard,
+  FileChartColumnIncreasing,
   FileCode,
   FileCodeIcon,
-  FileIcon,
+  FileSpreadsheet,
   FileTextIcon,
+  Funnel,
   HelpCircleIcon,
   Inbox,
   LayoutDashboardIcon,
   ListIcon,
+  Mail,
   SearchIcon,
   SettingsIcon,
 } from "lucide-react";
@@ -28,8 +31,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { NavMain } from "./NavMain";
-import { NavSecondary } from "./NavSecondary";
-import { NavDocuments } from "./NavDocuments";
 import { NavUser } from "./NavUser";
 import { WhatsAppIcon } from "@/icons/WhatsAppIcon";
 import { WhatsappBWIcon } from "@/icons/WhatsappBWIcon";
@@ -70,6 +71,41 @@ const data = {
       title: "Inbox",
       url: "/inbox",
       icon: Inbox,
+    },
+    {
+      title: "Sent Messages",
+      url: "/sent-messages",
+      icon: FileChartColumnIncreasing,
+    },
+    {
+      title: "Sent Statistics",
+      url: "/sent-statistics",
+      icon: ChartNoAxesCombined,
+    },
+    {
+      title: "Invoices",
+      url: "/invoices",
+      icon: FileSpreadsheet,
+    },
+    {
+      title: "Buy Now",
+      url: "/pricing",
+      icon: CreditCard,
+    },
+    {
+      title: "Filter numbers",
+      url: "/filter-numbers",
+      icon: Funnel,
+    },
+    {
+      title: "Contact Us",
+      url: "/contact-us",
+      icon: Mail,
+    },
+    {
+      title: "Settings",
+      url: "/settings",
+      icon: SettingsIcon,
     },
   ],
   navClouds: [
@@ -137,23 +173,23 @@ const data = {
       icon: SearchIcon,
     },
   ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: DatabaseIcon,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: ClipboardListIcon,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: FileIcon,
-    },
-  ],
+  // documents: [
+  //   {
+  //     name: "Data Library",
+  //     url: "#",
+  //     icon: DatabaseIcon,
+  //   },
+  //   {
+  //     name: "Reports",
+  //     url: "#",
+  //     icon: ClipboardListIcon,
+  //   },
+  //   {
+  //     name: "Word Assistant",
+  //     url: "#",
+  //     icon: FileIcon,
+  //   },
+  // ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -176,8 +212,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        {/* <NavDocuments items={data.documents} /> */}
+        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
